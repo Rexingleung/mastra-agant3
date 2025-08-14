@@ -1,0 +1,17 @@
+name = "mastra-weather-agent"
+main = "src/worker.ts"
+compatibility_date = "2023-10-30"
+compatibility_flags = ["streams_enable_constructors"]
+
+# 变量配置
+[vars]
+NODE_ENV = "production"
+
+# 环境变量 (通过 wrangler secret 设置)
+# wrangler secret put OPENAI_API_KEY
+# wrangler secret put DEEPSEEK_API_KEY
+
+[[kv_namespaces]]
+binding = "MASTRA_KV"
+preview_id = "preview_kv_id"
+production_id = "production_kv_id"
